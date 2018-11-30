@@ -1,10 +1,6 @@
 /*
- * geometry.c
- * Andy Sayler
+ * Nasurudin Fui
  * CSCI 3308
- * Summer 2014
- *
- * This file contains a simple geomtery functions.
  *
  */
 
@@ -69,3 +65,16 @@ void coord_2d_midpoint(coord_2d_t* mid, const coord_2d_t* a, const coord_2d_t* b
     mid->y = ((a->y + b->y) / 2.0 );
 
 }
+
+double coord_2d_area_triangle(const coord_2d_t* a, const coord_2d_t* b, const coord_2d_t* c) {
+	int a_x = a -> x;
+        int a_y = a -> y;
+        int b_x = b -> x;
+        int b_y = b -> y;
+        int c_x = c -> x;
+        int c_y = c -> y;
+
+        double area = (a_x * (b_y - c_y)+(b_x * (c_y - a_y))+(c_x * (a_y - b_y)))/2.0;	
+	return area;
+}
+
